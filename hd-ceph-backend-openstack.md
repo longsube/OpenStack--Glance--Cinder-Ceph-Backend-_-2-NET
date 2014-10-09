@@ -24,7 +24,7 @@ apt-get update
 #### C.3. Add thêm HDD vào các node CEPH, ở đây giả sử là /dev/sdb
 	
 ### D. Thực hiện trên CEPH 1
-##### D.1. Tạo cặp khóa SSH cho 
+##### D.1. Tạo cặp khóa SSH
     ssh-keygen
     Enter file in which to save the key (/home/user_name/.ssh/id_rsa): [press enter]
     Enter passphrase (empty for no passphrase): [press enter]
