@@ -50,34 +50,29 @@ apt-get update
     ceph-deploy install ceph1 ceph2 ceph3
     ceph-deploy mon create-initial
 	
-#### D.6. Add thêm Ext_net và Cluster Ceph net vào file /etc/ceph/ceph.conf và /ceph-cluster/ceph.conf
-    [global]
-        ...
-        public network = 20.20.20.0/24
-		cluster network = 20.20.20.0/24
 		
-#### D.7. Format các phân vùng dành cho CEPH về định dạng xfs
+#### D.6. Format các phân vùng dành cho CEPH về định dạng xfs
     ceph-deploy disk zap --fs-type xfs ceph1:sdb ceph2:sdb ceph3:sdb
 	
-#### D.8. Khởi tạo các phân vùng trên thành các OSD cho CEPH
+#### D.7. Khởi tạo các phân vùng trên thành các OSD cho CEPH
     ceph-deploy osd prepare ceph1:sdb ceph2:sdb ceph3:sdb
     ceph-deploy osd activate ceph1:sdb1 ceph2:sdb1 ceph3:sdb1
 	
-#### D.9. Copy admin key và file config sang các node CEPH khác
+#### D.8. Copy admin key và file config sang các node CEPH khác
     ceph-deploy admin ceph1 ceph2 ceph3
     chmod +r /etc/ceph/ceph.client.admin.keyring
 	
-#### D.10. Kiểm tra trạng thái của CEPH
+#### D.9. Kiểm tra trạng thái của CEPH
     ceph health
     ceph status
 	
-#### D.11. Tạo các OSD
+#### D.10. Tạo các OSD
     ceph osd pool create volumes 100
     ceph osd pool create images 100
     ceph osd pool create vms 100
 	
 ### E. Thực hiện trên CEPH 2 và CEPH3
-Thay đổi quyền cho admin key vừa lấy
+    Thay đổi quyền cho admin key vừa lấy
     chmod +r /etc/ceph/ceph.client.admin.keyring
 	
 ### F. Đặt CEPH làm backend cho OpenStack
