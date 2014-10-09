@@ -149,5 +149,5 @@ apt-get update
     rbd -p volumes ls
     rbd -p images ls
 	
-####. F.15. Tắt 1 node CEPH bất kì và tạo volume lại
+#### F.15. Tắt 1 node CEPH bất kì và tạo volume lại
    
