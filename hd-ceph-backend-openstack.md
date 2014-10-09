@@ -138,7 +138,7 @@ apt-get update
     libvirt_images_rbd_pool=vms
     libvirt_images_rbd_ceph_conf=/etc/ceph/ceph.conf
     rbd_user=cinder
-   rbd_secret_uuid=[key_gen]
+    rbd_secret_uuid=[key_gen]
   
 #### F.13. Khởi động lại các dịch vụ
     cd /etc/init.d/; for i in $( ls nova-* ); do sudo service $i restart; cd;done
